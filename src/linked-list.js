@@ -5,20 +5,19 @@ class LinkedList {
         this.length = 0;
         this._head = null;
         this._tail = null;
-        this.node = null;
     }
 
     append(data) {
-        this.node = new Node(data);
+        let node = new Node(data);
         if(this.length) {
             
-            this._tail.next = this.node;
-            this.node.prev = this._tail;
-            this._tail = this.node;
+            this._tail.next = node;
+            node.prev = this._tail;
+            this._tail = node;
             
         } else {
-            this._head = this.node;
-            this._tail = this.node;
+            this._head = node;
+            this._tail = node;
         }
         this.length++;
         return this;
