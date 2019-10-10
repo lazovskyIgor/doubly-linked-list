@@ -9,7 +9,7 @@ class LinkedList {
 
     append(data) {
         let node = new Node(data);
-        if(this.length) {
+        if(!this.isEmpty()) {
             
             this._tail.next = node;
             node.prev = this._tail;
@@ -34,7 +34,7 @@ class LinkedList {
     }
 
     at(index) {
-        if(this.length) {
+        if(!this.isEmpty()) {
             let currentNode = this._head;
             for(let i = 0; i < index; i++) {
                 currentNode = currentNode.next;
@@ -45,7 +45,7 @@ class LinkedList {
     }
 
     insertAt(index, data) {
-        if(this.length) {
+        if(!this.isEmpty()) {
             let currentNode = this._head;
             let insertNode = new Node(data);
             for(let i = 0; i < index; i++) {
@@ -73,7 +73,7 @@ class LinkedList {
     }
 
     deleteAt(index) {
-        if(this.length) {
+        if(!this.isEmpty()) {
             let currentNode = this._head;            
             for(let i = 0; i < index; i++) {
                 currentNode = currentNode.next;
@@ -120,7 +120,7 @@ class LinkedList {
     }
 
     indexOf(data) {
-        if(this.length) {
+        if(!this.isEmpty()) {
             let currentNode = this._head;
             let currentNumber = 0;
             while(currentNode) {
